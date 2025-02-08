@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 18:56:41 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:04:07 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/08 19:22:34 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,19 @@
 
 class Animal {
 
-	private:
-		std::string type;
+    protected:
+        std::string type;
 
-	public:
+    public:
 
-		Animal();
-		Animal(const Animal& copy);
-		Animal& operator=(const Animal& copy);
-		~Animal();
+        Animal();
+        Animal(const Animal& copy);
+        Animal& operator=(const Animal& copy);
+        virtual ~Animal();
 
-		const std::string& getType() const;
+        const std::string& getType() const;
 
-		void makeSound() const;
+        virtual void makeSound() const;
 };
 
 #endif
