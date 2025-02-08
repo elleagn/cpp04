@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:24:15 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:38:14 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/08 19:47:15 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Cat : public Animal {
         Cat& operator=(const Cat& copy);
         ~Cat();
 
-        void makeSound() const override;
+        void makeSound() const;
 };
 
 #endif
