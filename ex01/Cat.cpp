@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:35:02 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/09 17:51:13 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 18:06:08 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Cat::Cat() {
 
+    std::cout << "Cat default constructor called" << std::endl;
     this->type = "Cat";
     this->brain = new Brain();
-    std::cout << "Cat default constructor called" << std::endl;
 
 }
 

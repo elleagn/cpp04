@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:51:07 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/09 11:09:14 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 18:04:14 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Brain& Brain::operator=(const Brain& copy) {
         this->ideas[i] = copy.ideas[i];
     }
     std::cout << "Brain copy assignment operator called" << std::endl;
+    return (*this);
 
 }
 

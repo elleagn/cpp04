@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:35:02 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/09 17:56:16 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 18:05:35 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 Dog::Dog() {
 
+    std::cout << "Dog default constructor called" << std::endl;
     this->type = "Dog";
     this->brain = new Brain();
-    std::cout << "Dog default constructor called" << std::endl;
 
 }
 
