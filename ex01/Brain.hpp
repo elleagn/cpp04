@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:23:14 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/09 10:31:07 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 17:28:34 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ class Brain {
 
         void addIdea(const std::string& idea);
         void printIdeas(void) const;
-
 
 };
 

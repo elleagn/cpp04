@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:48 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:56:47 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 18:01:57 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,15 @@
 
 int main()
 {
-    {
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
 
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
-        meta->makeSound();
+    Animal* animals[10];
 
-        delete meta;
-        delete j;
-        delete i;
+    std::cout << "ARRAY CREATION (right constructors + order)\n" << std::endl;
+    for (int i = 0; i < 5; i++) {
+        animals[i] = new Cat();
+        animals[i + 5] = new Dog();
     }
-    std::cout << std::endl;
-    {
-        WrongCat* wcat = new WrongCat();
-        WrongAnimal* wanimal = wcat;
 
-        std::cout << wcat->getType() << std::endl;
-        std::cout << wanimal->getType() << std::endl;
-        wcat->makeSound();
-        wanimal->makeSound();
-
-        delete wcat;
-    }
 
     return 0;
 }

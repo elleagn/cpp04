@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:35:02 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:44:17 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/09 17:56:16 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,22 @@
 Dog::Dog() {
 
     this->type = "Dog";
+    this->brain = new Brain();
     std::cout << "Dog default constructor called" << std::endl;
 
 }
 
-Dog::Dog(const Dog& copy) {
+Dog::Dog(const Dog& copy) : Animal(copy) {
 
-    this->Animal::operator=(copy);
+    this->brain = new Brain();
     std::cout << "Dog copy constructor called" << std::endl;
 
 }
 
 Dog& Dog::operator=(const Dog& copy) {
 
-    this->type = copy.type;
+    this->Animal::operator=(copy);
+    this->brain = copy.brain;
     std::cout << "Dog copy assignment operator called" << std::endl;
     return (*this);
 
@@ -36,6 +38,7 @@ Dog& Dog::operator=(const Dog& copy) {
 
 Dog::~Dog() {
 
+    delete this->brain;
     std::cout << "Dog destroyed" << std::endl;
 
 }
@@ -43,5 +46,17 @@ Dog::~Dog() {
 void Dog::makeSound() const {
 
     std::cout << "*woof*" << std::endl;
+
+}
+
+void Dog::addIdea(const std::string& idea) {
+
+    this->brain->addIdea(idea);
+
+}
+
+void Dog::think() const {
+
+    this->brain->printIdeas();
 
 }
