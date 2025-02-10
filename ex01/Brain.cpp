@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 10:51:07 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/09 18:04:14 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/10 11:55:29 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void Brain::addIdea(const std::string& idea) {
 void Brain::printIdeas(void) const {
 
     for (int i = 0; i < this->nbIdeas; i++) {
-        std::cout << this->ideas[this->nbIdeas] << std::endl;
+        std::cout << this->ideas[i] << std::endl;
     }
 
 }
