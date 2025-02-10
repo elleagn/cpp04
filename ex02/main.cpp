@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:48 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:56:47 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/10 11:51:45 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,33 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
-{
-    {
-        const Animal* meta = new Animal();
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
+int main() {
 
-        std::cout << j->getType() << " " << std::endl;
-        std::cout << i->getType() << " " << std::endl;
-        i->makeSound(); //will output the cat sound!
-        j->makeSound();
-        meta->makeSound();
+    Animal* animals[10];
 
-        delete meta;
-        delete j;
-        delete i;
-    }
-    std::cout << std::endl;
-    {
-        WrongCat* wcat = new WrongCat();
-        WrongAnimal* wanimal = wcat;
-
-        std::cout << wcat->getType() << std::endl;
-        std::cout << wanimal->getType() << std::endl;
-        wcat->makeSound();
-        wanimal->makeSound();
-
-        delete wcat;
+    std::cout << "ARRAY CREATION (right constructors + order)\n" << std::endl;
+    for (int i = 0; i < 5; i++) {
+        animals[i] = new Cat;
+        animals[i + 5] = new Dog;
     }
 
+    std::cout << "\nARRAY DELETION (right destructor)\n" << std::endl;
+    for (int i = 0; i < 10; i++) {
+        delete animals[i];
+    }
+
+    std::cout << "\nCOPIES (check deep copies)\n" << std::endl;
+
+    Cat original;
+    Cat copyConst(original);
+    Cat copyAssign = original;
+
+    original.addIdea("I'm the original");
+    copyConst.addIdea("I'm the copy by construction");
+    copyAssign.addIdea("I'm the copy by assignment");
+    original.think();
+    copyConst.think();
+    copyAssign.think();
+    
     return 0;
 }
