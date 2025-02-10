@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:05:33 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:20:26 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/10 12:23:48 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,5 @@ Animal::~Animal() {
 const std::string& Animal::getType() const {
 
     return (this->type);
-
-}
-
-void Animal::makeSound() const {
-
-    std::cout << "*unidentified animal noises*" << std::endl;
 
 }

@@ -6,15 +6,13 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:48 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/10 11:51:45 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/10 12:25:35 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 
 int main() {
 
@@ -44,5 +42,7 @@ int main() {
     copyConst.think();
     copyAssign.think();
     
+//    Animal animal;
+
     return 0;
 }
