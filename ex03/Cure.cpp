@@ -1,52 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:53:25 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/14 12:50:52 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/14 09:31:50 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 #include "ICharacter.hpp"
 
-Ice::Ice() : AMateria("ice") {
+Cure::Cure() : AMateria("cure") {
     
-    std::cout << "Ice constructor called" << std::endl;
-    
-}
-
-Ice::Ice(const Ice& iceMateria) : AMateria(iceMateria) {
-    
-    std::cout << "Ice copy constructor called" << std::endl;
-}
-
-Ice::~Ice() {
-
-    std::cout << "Ice destructor called" << std::endl;
+    std::cout << "Cure constructor called" << std::endl;
     
 }
 
-Ice& Ice::operator=(const Ice& iceMateria) {
+Cure::Cure(const Cure& CureMateria) : AMateria(CureMateria) {
+    
+    std::cout << "Cure copy constructor called" << std::endl;
+}
 
-    this->operator=(iceMateria);
+Cure::~Cure() {
+
+    std::cout << "Cure destructor called" << std::endl;
+    
+}
+
+Cure& Cure::operator=(const Cure& CureMateria) {
+
+    this->operator=(CureMateria);
 
     return (*this);
     
 }
 
-Ice* Ice::clone() const {
+Cure* Cure::clone() const {
     
-    return (new Ice);
+    return (new Cure);
 
 }
 
-void Ice::use(ICharacter& target) {
+void Cure::use(ICharacter& target) {
     
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *"; 
-    std::cout << std::endl;
+    std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 
 }
