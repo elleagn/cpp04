@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:53:22 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/13 10:55:59 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/14 09:14:03 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,13 @@
 class ICharacter;
 
 class AMateria {
+
     protected:
+
         std::string type;
+
     public:
+
         AMateria(std::string const & type);
         AMateria();
         AMateria(const AMateria& materia);
@@ -31,6 +35,7 @@ class AMateria {
         std::string const & getType() const;
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
+
 };
 
 #endif
