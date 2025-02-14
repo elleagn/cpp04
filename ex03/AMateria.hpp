@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 10:53:22 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/12 11:07:57 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/13 10:55:59 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define AMATERIA_HPP
 
 #include <string>
+#include <iostream>
 
 class ICharacter;
 
@@ -23,7 +24,8 @@ class AMateria {
     public:
         AMateria(std::string const & type);
         AMateria();
-        AMateria(AMateria& materia);
+        AMateria(const AMateria& materia);
+        AMateria& operator=(const AMateria& materia);
         virtual ~AMateria();
 
         std::string const & getType() const;
