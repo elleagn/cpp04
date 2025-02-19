@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:24:04 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 10:46:57 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 10:56:17 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,35 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& ms) {
     }
 
     return (*this);
+
+}
+
+void MateriaSource::learnMateria(AMateria* m) {
+
+    if (m) {
+        for (int i = 0; i < 4; i++) {
+            if (!this->materias[i]) {
+                this->materias[i] = m->clone();
+                std::cout << "Materia learned by MateriaSource." << std::endl;
+                return ;
+            }
+        }
+        std::cout << "MateriaSource could not learn materia, too many materias";
+        std::cout << std::endl;
+    }
+
+}
+
+AMateria* MateriaSource::createMateria(const std::string& type) {
+
+    for (int i; i < 4; i++) {
+        if (this->materias[i] && this->materias[i]->getType() == type) {
+            return (this->materias[i]->clone());
+        }
+    }
+
+    std::cout << "Could not find materia of type " << type << std::endl;
+
+    return (NULL);
 
 }
