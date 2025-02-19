@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:53:25 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 08:29:04 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 18:59:09 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ Ice& Ice::operator=(const Ice& iceMateria) {
 
     this->operator=(iceMateria);
 
+    std::cout << "Ice copy assignemnt operator called." << std::endl;
+
     return (*this);
 
 }
 
 Ice* Ice::clone() const {
+
+    std::cout << "Ice materia cloned" << std::endl;
 
     return (new Ice);
 

@@ -14,38 +14,42 @@
 #include "ICharacter.hpp"
 
 Cure::Cure() : AMateria("cure") {
-    
+
     std::cout << "Cure constructor called" << std::endl;
-    
+
 }
 
 Cure::Cure(const Cure& CureMateria) : AMateria(CureMateria) {
-    
+
     std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Cure::~Cure() {
 
     std::cout << "Cure destructor called" << std::endl;
-    
+
 }
 
 Cure& Cure::operator=(const Cure& CureMateria) {
 
     this->operator=(CureMateria);
 
+    std::cout << "Cure copy assignment operator called" << std::endl;
+
     return (*this);
-    
+
 }
 
 Cure* Cure::clone() const {
-    
+
+    std::cout << "Materia of type cure cloned" << std::endl;
+
     return (new Cure);
 
 }
 
 void Cure::use(ICharacter& target) {
-    
+
     std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 
 }

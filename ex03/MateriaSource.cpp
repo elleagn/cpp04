@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:24:04 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 10:56:17 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:00:11 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ AMateria* MateriaSource::createMateria(const std::string& type) {
 
     for (int i; i < 4; i++) {
         if (this->materias[i] && this->materias[i]->getType() == type) {
+            std::cout << "Materia of type " << type << " created" << std::endl;
             return (this->materias[i]->clone());
         }
     }
