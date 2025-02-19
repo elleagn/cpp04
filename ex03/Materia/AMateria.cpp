@@ -6,12 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:29:50 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 18:53:34 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:22:37 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
+#include "../Character/ICharacter.hpp"
 
 AMateria::AMateria() {
 

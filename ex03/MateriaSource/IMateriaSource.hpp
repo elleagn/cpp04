@@ -6,12 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 09:57:14 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 10:00:19 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:28:19 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE
+#define IMATERIASOURCE_HPP
 
 class AMateria;
 #include <string>

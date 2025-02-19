@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "Cure.hpp"
-#include "ICharacter.hpp"
+#include "../Character/ICharacter.hpp"
 
 Cure::Cure() : AMateria("cure") {
 
@@ -32,7 +32,7 @@ Cure::~Cure() {
 
 Cure& Cure::operator=(const Cure& CureMateria) {
 
-    this->operator=(CureMateria);
+    this->AMateria::operator=(CureMateria);
 
     std::cout << "Cure copy assignment operator called" << std::endl;
 
@@ -44,7 +44,7 @@ Cure* Cure::clone() const {
 
     std::cout << "Materia of type cure cloned" << std::endl;
 
-    return (new Cure);
+    return (new Cure(*this));
 
 }
 

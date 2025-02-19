@@ -6,12 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:24:04 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 19:00:11 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:23:41 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
-#include "AMateria.hpp"
+#include "../Materia/AMateria.hpp"
 
 MateriaSource::MateriaSource() {
 

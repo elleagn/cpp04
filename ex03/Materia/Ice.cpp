@@ -6,12 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:53:25 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 18:59:09 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:27:18 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
-#include "ICharacter.hpp"
+#include "../Character/ICharacter.hpp"
 
 Ice::Ice() : AMateria("ice") {
 
@@ -32,7 +32,7 @@ Ice::~Ice() {
 
 Ice& Ice::operator=(const Ice& iceMateria) {
 
-    this->operator=(iceMateria);
+    this->AMateria::operator=(iceMateria);
 
     std::cout << "Ice copy assignemnt operator called." << std::endl;
 
@@ -44,7 +44,7 @@ Ice* Ice::clone() const {
 
     std::cout << "Ice materia cloned" << std::endl;
 
-    return (new Ice);
+    return (new Ice(*this));
 
 }
 

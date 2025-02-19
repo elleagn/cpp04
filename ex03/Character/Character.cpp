@@ -6,12 +6,12 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 10:46:07 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 19:22:18 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
-#include "AMateria.hpp"
+#include "../Materia/AMateria.hpp"
 
 Character::Character(): name("default"), garbageSize(10) {
 
@@ -152,7 +152,7 @@ void Character::unequip(int idx) {
     }
 }
 
-void Character::use(int idx, Character& target) {
+void Character::use(int idx, ICharacter& target) {
 
     if (idx < 4 && this->inventory[idx]) {
         std::cout << this->name << ": ";
