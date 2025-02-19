@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 09:54:46 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 10:46:07 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,8 @@ Character& Character::operator=(const Character& c) {
 
     std::cout << "Charcter " << c.name << " copied by assignment";
     std::cout<< std::endl;
+
+    return (*this);
 
 }
 
