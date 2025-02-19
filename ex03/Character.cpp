@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 09:35:09 by gozon            ###   ########.fr       */
+/*   Updated: 2025/02/19 09:54:46 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,8 +110,51 @@ const std::string& Character::getName() const {
 
 }
 
-void equip(AMateria* m) {
+void Character::equip(AMateria* m) {
 
+    for (int i = 0; i < 4; i++) {
 
+        if (!this->inventory[i]) {
+            this->inventory[i] = m;
+            std::cout << "AMateria equipped" << std::endl;
+            return ;
+        }
+    }
+
+    std::cout << "Inventory full, could not equip Materia" << std::endl;
+
+}
+
+void Character::unequip(int idx) {
+    if (idx > 4) {
+        std::cout << "Unequip failed, index out of range." << std::endl;
+    }
+    else {
+        std::cout << "Materia unequipped" << std::endl;
+
+        for (int i = 0; i < garbageSize; i++) {
+            if (!this->garbage[i]) {
+                this->garbage[i] = this->inventory[idx];
+                return ;
+            }
+        }
+
+        AMateria** newGarbage = new AMateria*[garbageSize + 10];
+        for (int i = 0; i < this->garbageSize; i++) {
+            newGarbage[i] = this->garbage[i];
+        }
+        newGarbage[garbageSize] = this->inventory[idx];
+        delete[] this->garbage;
+        this->garbage = newGarbage;
+        this->garbageSize += 10;
+    }
+}
+
+void Character::use(int idx, Character& target) {
+
+    if (idx < 4 && this->inventory[idx]) {
+        std::cout << this->name << ": ";
+        this->inventory[idx]->use(target);
+    }
 
 }
