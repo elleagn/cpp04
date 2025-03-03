@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:56:32 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 19:24:21 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 09:47:00 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 void testMaterias() {
 
+    std::cout << "ICE:\n" << std::endl;
     {
         AMateria* ice = new Ice;
         AMateria* clone;
@@ -28,6 +29,8 @@ void testMaterias() {
         delete clone;
 
     }
+    std::cout << std::endl;
+    std::cout << "ICE:\n" << std::endl;
     {
         AMateria* cure = new Cure;
         AMateria* clone;
@@ -42,9 +45,31 @@ void testMaterias() {
 
 }
 
-int main(void) {
+// int main(void) {
 
-    std::cout << "MATERIAS:\n" << std::endl;
-    testMaterias();
+//     std::cout << "MATERIAS:\n" << std::endl;
+//     testMaterias();
 
+//     std::cout << "CHARACTERS:\n" << std::endl;
+
+// }
+
+int main()
+{
+IMateriaSource* src = new MateriaSource();
+src->learnMateria(new Ice());
+src->learnMateria(new Cure());
+ICharacter* me = new Character("me");
+AMateria* tmp;
+tmp = src->createMateria("ice");
+me->equip(tmp);
+tmp = src->createMateria("cure");
+me->equip(tmp);
+ICharacter* bob = new Character("bob");
+me->use(0, *bob);
+me->use(1, *bob);
+delete bob;
+delete me;
+delete src;
+return 0;
 }

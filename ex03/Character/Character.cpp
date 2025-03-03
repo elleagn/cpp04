@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 19:22:18 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 09:31:05 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,10 @@ void Character::use(int idx, ICharacter& target) {
     if (idx < 4 && this->inventory[idx]) {
         std::cout << this->name << ": ";
         this->inventory[idx]->use(target);
+    }
+    else
+    {
+        std::cout << "Invalid index (out of range or empty slot)";
     }
 
 }
