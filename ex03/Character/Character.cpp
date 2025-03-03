@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 09:49:53 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 10:39:04 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ Character::Character(): name("default"), garbageSize(10) {
             this->garbage[i] = NULL;
         }
 
-        std::cout << "Character default constructor called." << std::endl;
-
 }
 
 Character::Character(const std::string& name): name(name), garbageSize(10) {
@@ -38,8 +36,6 @@ Character::Character(const std::string& name): name(name), garbageSize(10) {
     for (int i = 0; i < this->garbageSize; i++) {
         this->garbage[i] = NULL;
     }
-
-    std::cout << "Character " << name << " created" << std::endl;
 
 }
 
@@ -59,14 +55,9 @@ Character::Character(const Character& c): name("Anonymous"), garbageSize(10) {
         this->garbage[i] = NULL;
     }
 
-    std::cout << "Charcter " << c.name << " copied by construction";
-    std::cout<< std::endl;
-
 }
 
 Character::~Character() {
-
-    std::cout << "Character " << this->name << " deleted" << std::endl;
 
     for (int i = 0; i < 4; i++) {
         delete this->inventory[i];
@@ -98,9 +89,6 @@ Character& Character::operator=(const Character& c) {
             this->inventory[i] = c.inventory[i]->clone();
         }
     }
-
-    std::cout << "Charcter " << c.name << " copied by assignment";
-    std::cout<< std::endl;
 
     return (*this);
 
@@ -160,7 +148,8 @@ void Character::use(int idx, ICharacter& target) {
     }
     else
     {
-        std::cout << "Invalid index (out of range or empty slot)";
+        std::cout << "Could not use Materia, invalid index (out of range or ";
+        std::cout << "empty slot)" << std::endl;
     }
 
 }

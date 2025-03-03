@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:56:32 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 09:56:21 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 10:35:14 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,35 +45,37 @@ void testMaterias() {
 
 }
 
-// int main(void) {
 
-//     std::cout << "MATERIAS:\n" << std::endl;
-//     testMaterias();
+int main(void) {
 
-//     std::cout << "CHARACTERS:\n" << std::endl;
+    std::cout << "MATERIAS:\n" << std::endl;
+    testMaterias();
 
-// }
+    std::cout << "CHARACTERS:\n" << std::endl;
+    testCharacters();
 
-int main()
-{
-IMateriaSource* src = new MateriaSource();
-AMateria* ice = new Ice();
-src->learnMateria(ice);
-AMateria* cure = new Cure();
-src->learnMateria(cure);
-ICharacter* me = new Character("me");
-AMateria* tmp;
-tmp = src->createMateria("ice");
-me->equip(tmp);
-tmp = src->createMateria("cure");
-me->equip(tmp);
-ICharacter* bob = new Character("bob");
-me->use(0, *bob);
-me->use(1, *bob);
-delete bob;
-delete me;
-delete src;
-delete ice;
-delete cure;
-return 0;
 }
+
+// int main()
+// {
+//     IMateriaSource* src = new MateriaSource();
+//     AMateria* ice = new Ice();
+//     src->learnMateria(ice);
+//     AMateria* cure = new Cure();
+//     src->learnMateria(cure);
+//     ICharacter* me = new Character("me");
+//     AMateria* tmp;
+//     tmp = src->createMateria("ice");
+//     me->equip(tmp);
+//     tmp = src->createMateria("cure");
+//     me->equip(tmp);
+//     ICharacter* bob = new Character("bob");
+//     me->use(0, *bob);
+//     me->use(1, *bob);
+//     delete bob;
+//     delete me;
+//     delete src;
+//     delete ice;
+//     delete cure;
+//     return 0;
+// }
