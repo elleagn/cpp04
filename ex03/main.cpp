@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:56:32 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 10:35:14 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 12:58:24 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,44 +15,50 @@
 #include "Character/Character.hpp"
 #include "MateriaSource/MateriaSource.hpp"
 
-void testMaterias() {
-
-    std::cout << "ICE:\n" << std::endl;
-    {
-        AMateria* ice = new Ice;
-        AMateria* clone;
-
-        std::cout << "Type = " << ice->getType() << std::endl;
-        clone = ice->clone();
-
-        delete ice;
-        delete clone;
-
-    }
-    std::cout << std::endl;
-    std::cout << "ICE:\n" << std::endl;
-    {
-        AMateria* cure = new Cure;
-        AMateria* clone;
-
-        std::cout << "Type = " << cure->getType() << std::endl;
-        clone = cure->clone();
-
-        delete cure;
-        delete clone;
-
-    }
-
-}
-
 
 int main(void) {
 
-    std::cout << "MATERIAS:\n" << std::endl;
-    testMaterias();
+    IMateriaSource* msource = new MateriaSource();
+    AMateria* ice = new Ice();
+    AMateria* cure = new Cure();
+    Character* bob = new Character("bob");
 
-    std::cout << "CHARACTERS:\n" << std::endl;
-    testCharacters();
+    std::cout << "Materia source : learnMateria + create a materia of unexisting type\n\n"; 
+    msource->learnMateria(ice);
+    std::cout << std::endl;
+    msource->createMateria("cure");
+
+    std::cout << "\nMateria source: learn too many materias\n\n"; 
+    msource->learnMateria(cure);
+    msource->learnMateria(ice);
+    msource->learnMateria(ice);
+    msource->learnMateria(ice);
+
+    std::cout << "\nCharacter: equip/unequip\n\n";
+    bob->equip(msource->createMateria("ice"));
+    bob->equip(msource->createMateria("ice"));
+    bob->unequip(3);
+    bob->unequip(0);
+
+    std::cout << "\nCharacter: use materia\n\n";
+    ICharacter* me = new Character(*bob);
+    bob->use(0, *me);
+    bob->use(1, *me);
+
+    std::cout << "\nCharacter: operator=\n";
+    *me = *bob;
+    me->use(1, *bob);
+    delete me;
+
+    std::cout << "\nCharacter: Deep copies\n\n";
+    me = new Character("me");
+    bob->use(1, *me);
+    
+    delete me;
+    delete ice;
+    delete cure;
+    delete msource;
+    delete bob;
 
 }
 

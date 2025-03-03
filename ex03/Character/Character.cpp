@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 10:39:04 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 11:40:21 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ Character::Character(const std::string& name): name(name), garbageSize(10) {
 
 }
 
-Character::Character(const Character& c): name("Anonymous"), garbageSize(10) {
+Character::Character(const Character& c): name(c.name), garbageSize(10) {
 
     for (int i = 0; i < 4; i++) {
         if (!c.inventory[i]) {
@@ -71,23 +71,26 @@ Character::~Character() {
 }
 
 Character& Character::operator=(const Character& c) {
-
-    for (int i = 0; i < 4; i++) {
-        delete this->inventory[i];
-    }
-
-    for (int i = 0; i < this->garbageSize; i++) {
-        delete this->garbage[i];
-        this->garbage[i] = NULL;
-    }
-
-    for (int i = 0; i < 4; i++) {
-        if (!c.inventory[i]) {
-            this->inventory[i] = NULL;
+    
+    if (this != &c) {
+        for (int i = 0; i < 4; i++) {
+            delete this->inventory[i];
         }
-        else {
-            this->inventory[i] = c.inventory[i]->clone();
+
+        for (int i = 0; i < this->garbageSize; i++) {
+            delete this->garbage[i];
+            this->garbage[i] = NULL;
         }
+
+        for (int i = 0; i < 4; i++) {
+            if (!c.inventory[i]) {
+                this->inventory[i] = NULL;
+            }
+            else {
+                this->inventory[i] = c.inventory[i]->clone();
+            }
+        }
+        this->name = c.name;
     }
 
     return (*this);
@@ -125,6 +128,7 @@ void Character::unequip(int idx) {
         for (int i = 0; i < garbageSize; i++) {
             if (!this->garbage[i]) {
                 this->garbage[i] = this->inventory[idx];
+                this->inventory[idx] = NULL;
                 return ;
             }
         }
@@ -137,6 +141,7 @@ void Character::unequip(int idx) {
         delete[] this->garbage;
         this->garbage = newGarbage;
         this->garbageSize += 10;
+        this->inventory[idx] = NULL;
     }
 }
 

@@ -15,26 +15,19 @@
 
 Cure::Cure() : AMateria("cure") {
 
-    std::cout << "Cure constructor called" << std::endl;
-
 }
 
 Cure::Cure(const Cure& CureMateria) : AMateria(CureMateria) {
 
-    std::cout << "Cure copy constructor called" << std::endl;
 }
 
 Cure::~Cure() {
-
-    std::cout << "Cure destructor called" << std::endl;
 
 }
 
 Cure& Cure::operator=(const Cure& CureMateria) {
 
     this->AMateria::operator=(CureMateria);
-
-    std::cout << "Cure copy assignment operator called" << std::endl;
 
     return (*this);
 
