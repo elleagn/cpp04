@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:24:04 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/19 19:23:41 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 09:53:01 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ MateriaSource::~MateriaSource() {
             delete this->materias[i];
         }
     }
+
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& ms) {
@@ -82,7 +83,7 @@ void MateriaSource::learnMateria(AMateria* m) {
 
 AMateria* MateriaSource::createMateria(const std::string& type) {
 
-    for (int i; i < 4; i++) {
+    for (int i = 0; i < 4; i++) {
         if (this->materias[i] && this->materias[i]->getType() == type) {
             std::cout << "Materia of type " << type << " created" << std::endl;
             return (this->materias[i]->clone());

@@ -6,14 +6,15 @@
 #    By: gozon <gozon@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/18 11:02:35 by gozon             #+#    #+#              #
-#    Updated: 2025/03/03 09:45:28 by gozon            ###   ########.fr        #
+#    Updated: 2025/03/03 09:49:07 by gozon            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex03
 CC = clang++
 CFLAGS = -Wall -Wextra -Werror -Wshadow -Wpedantic -std=c++98
-SRC_FILES =  Materia/AMateria.cpp Materia/Ice.cpp Materia/Cure.cpp main.cpp
+SRC_FILES =	Character/Character.cpp Materia/AMateria.cpp Materia/Ice.cpp \
+			Materia/Cure.cpp MateriaSource/MateriaSource.cpp main.cpp
 OBJ_DIRS = objects objects/Materia objects/Character objects/MateriaSource
 OBJ_DIR = objects
 OBJ = $(SRC_FILES:%.cpp=$(OBJ_DIR)/%.o)

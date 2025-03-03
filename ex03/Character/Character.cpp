@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 09:31:05 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/03 09:49:53 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ Character::Character(const std::string& name): name(name), garbageSize(10) {
 
 }
 
-Character::Character(const Character& c): name(name), garbageSize(10) {
+Character::Character(const Character& c): name("Anonymous"), garbageSize(10) {
 
     for (int i = 0; i < 4; i++) {
         if (!c.inventory[i]) {
