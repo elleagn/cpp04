@@ -15,13 +15,19 @@
 
 Cure::Cure() : AMateria("cure") {
 
+    std::cout << "Materia of type cure created\n";
+
 }
 
 Cure::Cure(const Cure& CureMateria) : AMateria(CureMateria) {
 
+    std::cout << "Materia of type cure copied\n";
+
 }
 
 Cure::~Cure() {
+
+    std::cout << "Materia of type cure destroyed\n";
 
 }
 

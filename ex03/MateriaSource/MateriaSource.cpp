@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 10:24:04 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 09:53:01 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/04 10:15:38 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ MateriaSource::MateriaSource() {
     for (int i = 0; i < 4; i++) {
         this->materias[i] = NULL;
     }
+    std::cout << "MateriaSource created\n";
 
 }
 
@@ -31,6 +32,7 @@ MateriaSource::MateriaSource(const MateriaSource& ms) {
             this->materias[i] = ms.materias[i]->clone();
         }
     }
+    std::cout << "MateriaSource copied\n";
 
 }
 
@@ -41,6 +43,7 @@ MateriaSource::~MateriaSource() {
             delete this->materias[i];
         }
     }
+    std::cout << "MateriaSource destroyed\n";
 
 }
 

@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 08:48:53 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 11:40:21 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/04 10:06:09 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ Character::Character(): name("default"), garbageSize(10) {
         for (int i = 0; i < this->garbageSize; i++) {
             this->garbage[i] = NULL;
         }
+        std::cout << "Character default constructor called\n";
 
 }
 
@@ -36,6 +37,7 @@ Character::Character(const std::string& name): name(name), garbageSize(10) {
     for (int i = 0; i < this->garbageSize; i++) {
         this->garbage[i] = NULL;
     }
+    std::cout << "Character " << this->name << " created\n";
 
 }
 
@@ -54,6 +56,7 @@ Character::Character(const Character& c): name(c.name), garbageSize(10) {
     for (int i = 0; i < this->garbageSize; i++) {
         this->garbage[i] = NULL;
     }
+    std::cout << "Character copy constructor called\n";
 
 }
 
@@ -67,6 +70,7 @@ Character::~Character() {
         delete this->garbage[i];
     }
     delete[] garbage;
+    std::cout << "Character destructor called\n";
 
 }
 

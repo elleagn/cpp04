@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 10:56:32 by gozon             #+#    #+#             */
-/*   Updated: 2025/03/03 12:58:24 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/04 10:27:02 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(void) {
     AMateria* cure = new Cure();
     Character* bob = new Character("bob");
 
-    std::cout << "Materia source : learnMateria + create a materia of unexisting type\n\n"; 
+    std::cout << "\nMateria source : learnMateria + create a materia of unexisting type\n\n"; 
     msource->learnMateria(ice);
     std::cout << std::endl;
     msource->createMateria("cure");
@@ -32,27 +32,40 @@ int main(void) {
     msource->learnMateria(cure);
     msource->learnMateria(ice);
     msource->learnMateria(ice);
+    std::cout << std::endl;
     msource->learnMateria(ice);
 
     std::cout << "\nCharacter: equip/unequip\n\n";
     bob->equip(msource->createMateria("ice"));
+    std::cout << std::endl;
     bob->equip(msource->createMateria("ice"));
+    std::cout << std::endl;
     bob->unequip(3);
     bob->unequip(0);
 
     std::cout << "\nCharacter: use materia\n\n";
-    ICharacter* me = new Character(*bob);
+    Character* me = new Character(*bob);
+    std::cout << std::endl;
     bob->use(0, *me);
+    std::cout << std::endl;
     bob->use(1, *me);
+    std::cout << std::endl;
+    bob->equip(msource->createMateria("cure"));
+    std::cout << std::endl;
+    bob->use(0, *me);
 
-    std::cout << "\nCharacter: operator=\n";
+    std::cout << "\nCharacter: operator=\n\n";
     *me = *bob;
+    std::cout << std::endl;
     me->use(1, *bob);
-    delete me;
 
     std::cout << "\nCharacter: Deep copies\n\n";
+    *bob = *me;
+    delete me;
     me = new Character("me");
+    std::cout << std::endl;
     bob->use(1, *me);
+    std::cout << std::endl;
     
     delete me;
     delete ice;
