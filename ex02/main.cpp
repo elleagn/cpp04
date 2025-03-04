@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:48 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/10 12:25:35 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/04 09:56:25 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,26 @@ int main() {
 
     std::cout << "\nCOPIES (check deep copies)\n" << std::endl;
 
-    Cat original;
-    Cat copyConst(original);
-    Cat copyAssign = original;
+    Cat* original = new Cat();
+    Cat* copyAssign = new Cat();
 
-    original.addIdea("I'm the original");
-    copyConst.addIdea("I'm the copy by construction");
-    copyAssign.addIdea("I'm the copy by assignment");
-    original.think();
-    copyConst.think();
-    copyAssign.think();
+    original->addIdea("I'm the original");
+    Cat* copyConst = new Cat(*original);
+    copyConst->addIdea("I'm the copy by construction");
+    *copyAssign = *copyConst; 
+    copyAssign->addIdea("I'm the copy by assignment");
+
+    std::cout << std::endl;
+    original->think();
+    delete original;
+    std::cout << std::endl;
+    copyConst->think();
+    delete copyConst;
+    std::cout << std::endl;
+    copyAssign->think();
+    delete copyAssign;
     
-//    Animal animal;
-
+    // Animal animal;
+    
     return 0;
 }

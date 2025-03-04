@@ -6,7 +6,7 @@
 /*   By: gozon <gozon@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 19:45:48 by gozon             #+#    #+#             */
-/*   Updated: 2025/02/08 19:56:47 by gozon            ###   ########.fr       */
+/*   Updated: 2025/03/04 09:29:08 by gozon            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int main()
-{
+int main() {
     {
         const Animal* meta = new Animal();
         const Animal* j = new Dog();
